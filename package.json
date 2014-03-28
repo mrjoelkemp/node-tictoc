@@ -1,0 +1,29 @@
+{
+  "name": "node-tictoc",
+  "version": "1.0.0",
+  "description": "Simple stopwatch timer for profiling operations",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrjoelkemp/node-tictoc"
+  },
+  "keywords": [
+    "timer",
+    "profiler",
+    "elapsed",
+    "seconds",
+    "milliseconds"
+  ],
+  "author": "Joel Kemp <joel@mrjoelkemp.com> (http://www.mrjoelkemp.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrjoelkemp/node-tictoc/issues"
+  },
+  "homepage": "https://github.com/mrjoelkemp/node-tictoc"
+}
