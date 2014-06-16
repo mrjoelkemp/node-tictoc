@@ -13,15 +13,16 @@ module.exports.tic = function () {
 
 /**
  * Prints the elapsed seconds and milliseconds for the most recent timer
- * @return {[type]} [description]
  */
 module.exports.toc = function () {
   var time = this.toct();
 
   var result = '';
 
-  if (time.seconds) result += seconds + ' seconds ';
-  if (time.ms)      result += ms + ' ms ';
+  if (time.hours)   result += time.hours + ' hours ';
+  if (time.minutes) result += time.minutes + ' minutes ';
+  if (time.seconds) result += time.seconds + ' seconds ';
+  if (time.ms)      result += time.ms + ' ms ';
 
   console.log(result);
 };
@@ -37,7 +38,10 @@ module.exports.toct = function() {
 
   return {
     seconds: time[0],
-    nanos: time[1],
-    ms: time[1] / 1000000
+    nanos:   time[1],
+    ms:      time[1] / 1000000,
+    // TODO: These need to be modded to not include the seconds
+    minutes: time[0] / 60,
+    hours:   time[0] / 3600
   };
 };
