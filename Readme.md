@@ -1,5 +1,4 @@
-node-tictoc
-===
+### tictoc
 
 Wrapper around `process.hrtime` that lets you have a stack of
 timers with a simpler api and more useful output:
@@ -29,3 +28,15 @@ Or a recursive timing solution that takes advantage of the stack:
     time.toc(); // prints the elapsed time in last-in-first-out (LIFO) order
   }
 ```
+
+If you just want the time values:
+
+```javascript
+  time.toct()
+```
+
+Returns an object with the following values for the most recent timer (started with `tic`):
+
+* `seconds`
+* `nanos`
+* `ms`

@@ -1,22 +1,43 @@
-// Stack of timers
+/**
+ * Stack of timers
+ * @type {Array}
+ */
 var timers = [];
 
+/**
+ * Creates a new timer
+ */
 module.exports.tic = function () {
   timers.push(process.hrtime());
 };
 
+/**
+ * Prints the elapsed seconds and milliseconds for the most recent timer
+ * @return {[type]} [description]
+ */
 module.exports.toc = function () {
-  if (! timers.length) return;
-
-  var time = process.hrtime(timers.pop()),
-      seconds = time[0],
-      nanos   = time[1],
-      ms      = nanos / 1000000;
+  var time = this.toct();
 
   var result = '';
 
-  if (seconds) result += seconds + ' seconds ';
-  if (ms)      result += ms + ' ms ';
+  if (time.seconds) result += seconds + ' seconds ';
+  if (time.ms)      result += ms + ' ms ';
 
   console.log(result);
+};
+
+/**
+ * If you just want the elapsed time without printing
+ * @return {Object} Contains the time conversions (seconds, nanos, ms) for the most recent timer
+ */
+module.exports.toct = function() {
+  if (! timers.length) return null;
+
+  var time = process.hrtime(timers.pop());
+
+  return {
+    seconds: time[0],
+    nanos: time[1],
+    ms: time[1] / 1000000
+  };
 };
