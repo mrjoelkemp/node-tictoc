@@ -1,7 +1,10 @@
 ### tictoc
 
-Wrapper around `process.hrtime` that lets you have a stack of
-timers with a simpler api and more useful output:
+`npm install node-tictoc`
+
+Wrapper around `process.hrtime` that lets you have a stack of timers with a simpler api and more useful output:
+
+### Usage
 
 ```javascript
   var time = require('node-tictoc');

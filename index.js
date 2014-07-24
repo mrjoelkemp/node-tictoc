@@ -19,8 +19,6 @@ module.exports.toc = function () {
 
   var result = '';
 
-  if (time.hours)   result += time.hours + ' hours ';
-  if (time.minutes) result += time.minutes + ' minutes ';
   if (time.seconds) result += time.seconds + ' seconds ';
   if (time.ms)      result += time.ms + ' ms ';
 
@@ -39,9 +37,6 @@ module.exports.toct = function() {
   return {
     seconds: time[0],
     nanos:   time[1],
-    ms:      time[1] / 1000000,
-    // TODO: These need to be modded to not include the seconds
-    minutes: time[0] / 60,
-    hours:   time[0] / 3600
+    ms:      time[1] / 1000000
   };
 };
