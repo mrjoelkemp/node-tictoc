@@ -38,6 +38,12 @@ If you just want the time values:
   time.toct()
 ```
 
+If you want the profiling string but don't want it console logged automatically:
+
+```
+  time.stoc();
+```
+
 Returns an object with the following values for the most recent timer (started with `tic`):
 
 * `seconds`

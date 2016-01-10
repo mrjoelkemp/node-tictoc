@@ -15,6 +15,13 @@ module.exports.tic = function () {
  * Prints the elapsed seconds and milliseconds for the most recent timer
  */
 module.exports.toc = function () {
+  var result = this.stoc();
+
+  console.log(result);
+};
+
+// Useful for folks who want to print via another logger like `debug`
+module.exports.stoc = function() {
   var time = this.toct();
 
   var result = '';
@@ -22,7 +29,7 @@ module.exports.toc = function () {
   if (time.seconds) result += time.seconds + ' seconds ';
   if (time.ms)      result += time.ms + ' ms ';
 
-  console.log(result);
+  return result;
 };
 
 /**
