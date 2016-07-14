@@ -4,6 +4,8 @@
  */
 var timers = [];
 
+module.exports.log = console.log.bind(console);
+
 /**
  * Creates a new timer
  */
@@ -17,7 +19,7 @@ module.exports.tic = function () {
 module.exports.toc = function () {
   var result = this.stoc();
 
-  console.log(result);
+  this.log(result);
 };
 
 // Useful for folks who want to print via another logger like `debug`
